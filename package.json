@@ -14,7 +14,9 @@
   "scripts": {
     "test": "npm run lint && nyc --reporter=html --reporter=text mocha",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "lint": "eslint --ext .json --ext .js ."
+    "lint": "eslint --ext .json --ext .js .",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -39,7 +41,8 @@
   "homepage": "https://github.com/codemanki/cloudscraper",
   "dependencies": {
     "request": "^2.88.0",
-    "request-promise": "^4.2.4"
+    "request-promise": "^4.2.4",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -57,5 +60,6 @@
     "nyc": "^14.0.0",
     "sinon": "^7.2.4",
     "sinon-chai": "^3.3.0"
-  }
+  },
+  "snyk": true
 }
